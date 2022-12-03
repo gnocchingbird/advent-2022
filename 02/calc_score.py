@@ -47,7 +47,7 @@ def calculate_score2(inp: str) -> int:
             score = score + p1val
             print(f"it's a draw with {p1val} on both sides!")
         if result == "Z":
-            score = score + ((p1val + 1) % 3)
+            score = score + (1 + (p1val % 3))
             print(f"p2 won with {(p1val + 1) % 3} against {p1val}!")
             #if p1val == 1:
             #    score = score + 3
