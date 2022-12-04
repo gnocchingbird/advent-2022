@@ -7,7 +7,11 @@ def get_section_ids(inp: str) -> list:
 def count_containments(pairs: list) -> int:
     """Counts the amount of pairs where one half wholly contains the other"""
     return sum((s1.issubset(s2) or s2.issubset(s1) for s1, s2 in pairs))
-        
+
+def count_intersections(pairs: list) -> int:
+    """Counts the amount of pairs where the halves intersect at all"""
+    return sum((s1.intersection(s2) != set() for s1, s2 in pairs))
+
 
 
 if __name__ == "__main__":
@@ -19,4 +23,6 @@ if __name__ == "__main__":
 2-6,4-8"""
     
     with open("04/input.txt") as file:
-        print(count_containments(get_section_ids(file.read())))
+        pairs = get_section_ids(file.read())
+        print("Puzzle 01:", count_containments(pairs))
+        print("Puzzle 02:", count_intersections(pairs))
