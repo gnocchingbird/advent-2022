@@ -12,3 +12,4 @@ if __name__ == "__main__":
     with open("06/input.txt") as file:
         fileinput = file.read()
         print("Puzzle 01:", find_position(fileinput, 4))
+        print("Puzzle 02:", find_position(fileinput, 14))
