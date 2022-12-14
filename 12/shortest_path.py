@@ -24,7 +24,6 @@ def shortest_path_dijkstra(inp: str) -> int:
         for x, char in enumerate(line):
             if char == "S":
                 start = (x, y)
-                print(start)
                 break
 
     current = Node("S", start, ord("a"))
@@ -32,7 +31,6 @@ def shortest_path_dijkstra(inp: str) -> int:
 
     to_visit.extend(find_neighbors(inp, current))
     while current.name != "E":
-        print(current.pos)
         for neighbor in find_neighbors(inp, current):
             if neighbor not in visited:
                 if neighbor in to_visit:
